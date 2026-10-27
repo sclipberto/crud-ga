@@ -12,7 +12,9 @@ jobs:
 
     steps:
       - name: quien es
-        run: ls
+        run: |
+          echo "ruta: $(pwd)"
+          ls -la
 
       - name: build server
         run: docker build -t crud-ga-server ./server
