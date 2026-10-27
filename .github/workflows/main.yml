@@ -11,6 +11,9 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      - name: quien es
+        run: whoami
+
       - name: build server
         run: docker build -t crud-ga-server ./server
         
