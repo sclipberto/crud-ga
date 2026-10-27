@@ -1,0 +1,29 @@
+services:
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - 27017:27017
+
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh mongodb://192.168.100.126:27017 --quiet
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  server:
+    image: crud-ga-server
+    depends_on:
+      mongo:
+        condition: service_healthy
+    environment:
+      MONGODB_HOST: mongo
+    ports:
+      - 3000:3000
+
+  client:
+    image: crud-ga-client
+    ports:
+      - 5173:5173
