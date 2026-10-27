@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: quien es
-        run: whoami
+        run: ls
 
       - name: build server
         run: docker build -t crud-ga-server ./server
