@@ -23,6 +23,6 @@ jobs:
 
     steps:
       - name: docker run
-      run: docker compose up -d
+        run: docker compose up -d
         
     
