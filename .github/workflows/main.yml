@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: build server
-        run: cd server && docker build -t crud-ga-server .
+        run: docker build -t crud-ga-server ./server
         
       - name: build client
-        run: cd client && docker build -t crud-ga-client .
+        run: docker build -t crud-ga-client ./client
 
   deploy:
     name: deploy
