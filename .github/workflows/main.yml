@@ -12,14 +12,17 @@ jobs:
 
     steps:
       - name: quien es
+        uses: actions/checkout@v4
         run: |
           echo "ruta: $(pwd)"
           ls -la
 
       - name: build server
+        uses: actions/checkout@v4
         run: docker build -t crud-ga-server ./server
         
       - name: build client
+        uses: actions/checkout@v4
         run: docker build -t crud-ga-client ./client
 
   deploy:
@@ -28,6 +31,7 @@ jobs:
 
     steps:
       - name: docker run
+        uses: actions/checkout@v4
         run: docker compose up -d
         
     
