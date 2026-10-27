@@ -1,0 +1,28 @@
+name: build and deploy
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: 
+
+jobs:
+  build:
+    name: build de dockerfile
+    runs-on: self-hosted
+
+    steps:
+      - name: build server
+        run: cd server && docker build -t crud-ga-server .
+        
+      - name: build client
+        run: cd client && docker build -t crud-ga-client .
+
+  deploy:
+    name: deploy
+    runs-on: self-hosted
+
+    steps:
+      - name: docker run
+      run: docker compose up -d
+        
+    
