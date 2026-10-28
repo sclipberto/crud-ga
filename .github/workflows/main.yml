@@ -42,5 +42,10 @@ jobs:
 
       - name: docker run
         run: docker compose up -d
+
+      - name: quien es
+        run: |
+          echo "ruta: $(pwd)"
+          ls -la
         
     
