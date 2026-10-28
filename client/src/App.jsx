@@ -9,6 +9,8 @@ const App = () => {
   //  API URI's
   // const BASE_URL = "http://192.168.100.126:3000/api";
   const BASE_URL = import.meta.env.BASE_URL;
+  console.log(BASE_URL);
+  window.__BASE_URL=BASE_URL;
   const getUsers = `${BASE_URL}/users`;
   const postUser = `${BASE_URL}/addUser`;
 
