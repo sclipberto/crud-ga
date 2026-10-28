@@ -8,7 +8,7 @@ const App = () => {
   const [userVariant, setUserVariant] = useState({ bool: true, id: "" });
   //  API URI's
   // const BASE_URL = "http://192.168.100.126:3000/api";
-  const BASE_URL = process.env.BASE_URL;
+  const BASE_URL = import.meta.env.BASE_URL;
   const getUsers = `${BASE_URL}/users`;
   const postUser = `${BASE_URL}/addUser`;
 
