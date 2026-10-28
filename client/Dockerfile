@@ -7,5 +7,5 @@ RUN npm i
 COPY . .
 EXPOSE 5173
 
-ENV SERVER_HOST=""
+ENV BASE_URL=""
 CMD ["npm","run","dev"]
