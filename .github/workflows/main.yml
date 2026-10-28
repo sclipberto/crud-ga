@@ -44,6 +44,9 @@ jobs:
         run: cat .env
 
       - name: docker run
+        env:
+          MONGODB_USER: ${{secrets.MONGODB_USER}}
+          MONGODB_PASS: ${{secrets.MONGODB_PASS}}
         run: docker compose up -d
 
       - name: quien es
