@@ -26,6 +26,7 @@ jobs:
         run: docker build -t crud-ga-client ./client
 
   deploy:
+    needs: build
     name: deploy
     runs-on: self-hosted
 
