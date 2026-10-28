@@ -2,8 +2,8 @@ services:
   mongo:
     image: mongo
     environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USER}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASS}
+      MONGO_INITDB_ROOT_USERNAME: ${{secrets.MONGODB_USER}}
+      MONGO_INITDB_ROOT_PASSWORD: ${{secrets.MONGODB_PASS}}
     ports:
       - 27017:27017
 
@@ -20,8 +20,8 @@ services:
         condition: service_healthy
     environment:
       MONGODB_HOST: mongo
-      MONGODB_USER: ${MONGODB_USER}
-      MONGODB_PASS: ${MONGODB_PASS}
+      MONGODB_USER: ${{secrets.MONGODB_USER}}
+      MONGODB_PASS: ${{secrets.MONGODB_PASS}}
     ports:
       - 3000:3000
 
