@@ -23,7 +23,7 @@ jobs:
         run: docker build -t crud-ga-server ./server
         
       - name: archivo .env
-        run: echo "BASE_URL=${{secrets.BASE_URL}}" > ./client/.env && echo "BASE_URL=${{secrets.BASE_URL}}"
+        run: echo "B_URL=${{secrets.BASE_URL}}" > ./client/.env && echo "B_URL=${{secrets.BASE_URL}}"
 
       - name: build client
         run: docker build -t crud-ga-client ./client
@@ -38,7 +38,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: archivo .env
-        run: echo "BASE_URL=${{secrets.BASE_URL}}" > .env && echo "BASE_URL=${{secrets.BASE_URL}}"
+        run: echo "B_URL=${{secrets.BASE_URL}}" > .env && echo "B_URL=${{secrets.BASE_URL}}"
 
       - name: verificando
         run: cat .env
