@@ -27,7 +27,7 @@ services:
 
   client:
     image: crud-ga-client
-    volumes:
-      - .env:/app/.env
+    # volumes:
+    #   - .env:/app/.env
     ports:
       - 5173:5173
