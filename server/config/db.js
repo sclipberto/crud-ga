@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 // const mongoURI = 'mongodb+srv://crudapp:crudapp@cluster0.iydyt0r.mongodb.net/?retryWrites=true&w=majority';
 const host = process.env.MONGODB_HOST;
-const mongoURI = 'mongodb://root:example@192.168.100.126:27017/crud?authSource=admin';
+const user=process.env.MONGODB_USER;
+const pass=process.env.MONGODB_PASS;
+const mongoURI = `mongodb://${user}:${pass}@${host}:27017/crud?authSource=admin`;
 console.log(mongoURI);
 
 const connectDB = async () => {
